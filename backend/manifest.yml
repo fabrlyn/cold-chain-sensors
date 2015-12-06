@@ -1,0 +1,10 @@
+applications:
+- path: .
+  memory: 1024M
+  instances: 1
+  domain: mybluemix.net
+  name: plantit 
+  host: openhack-plantit 
+  disk_quota: 1024M
+  command: openhack-plantit
+  buildpack: https://github.com/cloudfoundry/go-buildpack.git
