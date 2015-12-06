@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/Robban/Dev/Other/PlantIT/Soil/app/libs/org.eclipse.paho.client.mqttv3-1.0.3-20150818.040635-202.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c0a0759cce91561888a58753cd23cb564d9ffa47">
+        <dex dex="/Users/Robban/Dev/Other/PlantIT/Soil/app/build/intermediates/pre-dexed/debug/org.eclipse.paho.client.mqttv3-1.0.3-20150818.040635-202-bff7043f22c6adba636c4eca9a076c9ff2d46efd.jar" />
+    </item>
+    <item
+        jar="/Users/Robban/Dev/Other/PlantIT/Soil/app/libs/com.ibm.iotf.client-0.0.3.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="6960cb7f5a9e70d7b880780196030206dd10054f">
+        <dex dex="/Users/Robban/Dev/Other/PlantIT/Soil/app/build/intermediates/pre-dexed/debug/com.ibm.iotf.client-0.0.3-c0cb8c1cd1348d281679ad708499611f7b5f2f9a.jar" />
+    </item>
+    <item
+        jar="/Users/Robban/Dev/Other/PlantIT/Soil/app/libs/gson-2.5.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="686c608d1805b6d4d425ec4459e88164ffc85870">
+        <dex dex="/Users/Robban/Dev/Other/PlantIT/Soil/app/build/intermediates/pre-dexed/debug/gson-2.5-1f6a21917e1a9e2647125ca14a4776c4132c505f.jar" />
+    </item>
+
+</items>
