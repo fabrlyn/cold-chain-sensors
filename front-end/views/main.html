@@ -1,0 +1,163 @@
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    
+                </li>
+                <li class="nav">
+                    <a ng-click="navigateTo(businessLink)">Dashboard</a>
+                    <a class="active-nav" ng-click="navigateTo(businessLink)">Delivery overview</a>
+                </li>
+            </ul>
+            <div class="activities-wrapper">
+                <div class="activity-title">Notifications:</div>
+                <div class="activity-box">
+                    <ul class="activity">
+                        <li>
+                            2015-12-05: <span class="critical">Critical temperature level </span>
+                            <a href="#">M#2341</a> on package <a href="#">PA#020505</a> - Malmö, Sweden
+                         </li>
+                        <li>
+                            2015-12-05: <span class="warning-text">Warning temperature level </span>
+                            <a href="#">M#2341</a> on package <a href="#">BA#020505</a> - Malmö, Sweden
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <header>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                      <a href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars"></i></a>
+                      <span class="logo">Challenge: Cold Chain Sensors</span>
+                  </div>
+              </div>
+          </div>
+      </header>
+      <div>
+        <!--<div class="row filters">
+            <div class="col-md-3">
+                <input type="text">
+            </div>
+            <div class="col-md-3">
+                <input type="text">
+            </div>
+            <div class="col-md-3">
+                <input type="text">
+            </div>
+            <div class="col-md-3">
+                <input type="submit" value="Filter">
+            </div>
+
+        </div>-->
+    </div>
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        
+                   <!-- <section id="transport-filter">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12 filter">
+                                    date filters, search-function for id goes here also
+                                </div>
+                            </div>
+                        </div>
+                    </section>-->
+                    <section id="transport-objects">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <nvd3 options="options" data="data" class="with-3d-shadow with-transitions"></nvd3>
+                            </div>
+                        </div>
+                     <div class="row">
+                       <!-- <div class="col-md-12" ng-show="!data.length && data.length <= 0">
+                            <h1>Loading data...</h1>
+                        </div>  -->
+                      <div class="col-md-6">
+                          <h1 class="transports">{{currentTab}} tertiary packages ({{transports.length}})</h1>
+                          
+                      </div>
+                      <div class="col-md-4 col-md-offset-2">
+                        <ul class="selection-box">
+                            <li ng-class="{active: currentTab === active}" ng-click="currentTab = active">{{active}}</li>
+                            <li ng-class="{active: currentTab === archived}" ng-click="currentTab = archived">{{archived}}</li>
+                            <li ng-class="{active: currentTab === all}" ng-click="currentTab = all">{{all}}</li>
+                        </ul>
+                    </div>
+                </div>   
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <ul>
+                          <li class="row" ng-repeat="t in transports">
+                            <div class="col-md-12 transport-object"> 
+                                <div class="transport-id">
+                                    {{t.transportId}} <small>started moving {{t.startDateHumanized}}
+                                        <span ng-show="t.endDateHumanized">, arrived </span> {{t.endDateHumanized}}</small>
+                                </div>
+
+                                <div class="transport-from">
+                                    <i class="fa fa-map-marker"></i> {{t.startLocation}}
+                                </div>
+
+                                <div class="transport-to">
+                                    <i class="fa fa-map-marker"></i> {{t.endLocation}}
+                                </div>
+                          
+                                <button ng-click="showDetails = ! showDetails" class="transport-details">
+                                    <span ng-hide="showDetails">Show details</span> <span ng-show="showDetails">Hide details</span>
+                                </button>
+                                 <span ng-class="{'transport-status': isTrue, 'error': t.alarm === 3, 'warning': t.alarm === 2, 'success': t.alarm === 1}"></span>
+
+
+                                <div class="transport-packages" ng-show="showDetails">
+                                    <table class="table">
+                                        <thead>
+                                          <tr class="table-header">
+                                            <th>Device ID</th>
+                                            <th>Name</th>
+                                            <th>Dosage</th>
+                                            <th>Requirement</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="table-row" ng-repeat="package in t.packages">
+                                            <td>{{package.device_id}}</td>
+                                            <td>{{package.name}}</td>
+                                            <td>{{package.amount}}</td>
+                                            <td>{{package.requirement}}</td>
+                                            <td>
+                                                <span ng-class="{'package-status-tbl': isTrue, 'error': package.alarm === 3, 'warning': package.alarm === 2, 'success': package.alarm === 1}"></span>
+                                           </td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+    
+</div>
+</section>
+</div>
+<!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- Menu Toggle Script -->
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    console.log("hej");
+    $("#wrapper").toggleClass("toggled");
+});
+</script>

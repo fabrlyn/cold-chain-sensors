@@ -1,0 +1,61 @@
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+
+                </li>
+                <li class="nav">
+                    <a class="active-nav" ng-click="navigateTo(dashboardLink)">Dashboard</a>
+                    <a ng-click="navigateTo(businessLink)">Delivery overview</a>
+                </li>
+            </ul>
+            <div class="activities-wrapper">
+                <div class="activity-title">Notifications:</div>
+                <div class="activity-box">
+                    <ul class="activity">
+                        <li>2015-12-05: <span class="critical">Crititcal temperature level </span><a href="#">M#2341</a> on package <a href="#">PA#020505</a> - Malmö, Sweden</li>
+                        <li>2015-12-05: <span class="warning-text">Warning temperature level </span><a href="#">M#2341</a> on package <a href="#">BA#020505</a> - Malmö, Sweden</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+        <header>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                      <a href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars"></i></a>
+                      Challenge: Cold Chain Sensors
+                  </div>
+              </div>
+          </div>
+      </header>
+      <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="title">Medicine waste - quantity</h1>
+                <nvd3 options="options" data="data" class="with-3d-shadow with-transitions"></nvd3>
+            </div>
+            <div class="col-md-12">
+                <h1 class="title">Medicinie waste - cost</h1>
+                <nvd3 options="moneyOptions" data="data" class="with-3d-shadow with-transitions"></nvd3>
+            </div>   
+        </div>                              
+    </div>
+<!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- Menu Toggle Script -->
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    console.log("hej");
+    $("#wrapper").toggleClass("toggled");
+});
+</script>

@@ -1,0 +1,390 @@
+   body {
+    font-family: 'Raleway', sans-serif;
+  }
+  .left {
+    float: left;
+  }
+  .right {
+    float: right;
+  }
+  header {
+    background: #2c75a4;
+    -moz-box-shadow: inset 0 -2px 0 rgba(35,31,32,.25);
+    -webkit-box-shadow: inset 0 -2px 0 rgba(35,31,32,.25);
+    box-shadow: inset 0 -2px 0 rgba(35,31,32,.25);
+    color: #fff;
+    padding: 25px 0;
+    font-size: 24px;
+  }
+  .header-wrapper {
+    position: relative;
+    top: 5px;
+  }
+  #menu-toggle {
+    color: #fff;
+    position: relative;
+  }
+  span.logo {
+    text-shadow: 1px 2px 0 rgba(35,31,32,.3);
+  }
+
+  /********************* TRANSPORT CSS ************************/
+
+  section#transport-objects {
+  }
+  section#transport-view {
+    padding: 25px 0;
+  }
+
+  .transport-object {
+    background: #dceffc;
+    border-radius: 4px;
+    border: 2px solid #71b2db;
+    margin-bottom: 15px;
+    padding: 15px;
+    display: inline-block;
+    position: relative;
+    color: #2c75a4;
+  }
+  ul {
+   list-style:none;
+   padding-left:0;
+   }  ​
+  .transport-dates {
+    display: inline-block;
+    float: right;
+  }
+  .transport-location {
+    display: inline-block;
+    float: left;
+  }
+  .transport-from {
+    text-align: center;
+    display: inline-block;
+    margin-right: 25px;
+    margin-top: 15px;
+    font-weight: 600;
+  }
+  .transport-id {
+    font-size: 20px;
+    font-weight: 500;
+    color: #163f59;
+  }
+
+  .transport-to {
+    text-align: center;
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: 600;
+  }
+  .transport-to i, .transport-from i {
+    margin-right: 10px;
+  }
+  .transport-start {
+    display: inline-block;
+    margin-left: 10px;
+  }
+  .transport-details {
+    background: #586873;
+    padding: 10px;
+    border-radius: 2px;
+    color: #fff;
+    -moz-box-shadow: inset 0 -1px 0 rgba(35,31,32,.25);
+    -webkit-box-shadow: inset 0 -1px 0 rgba(35,31,32,.25);
+    box-shadow: inset 0 -1px 0 rgba(35,31,32,.25);
+    border: none;
+    font-size: 14px;
+    position: relative;
+    top: -25px;
+    float: right;
+    display: block;
+  }
+  .transport-status {
+    position: absolute;
+    display: block;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    bottom: 10px;
+    right: 15px;
+  }
+  .filter {
+    background: #000;
+    padding: 15px;
+    margin: 25px 0;
+    border-radius: 4px;
+    color: #fff;
+  }
+
+  h1.title {
+    color: #000;
+    font-weight: 400;
+    font-size: 32px;
+    overflow: hidden;
+    padding-bottom: 15px;
+  }
+  h1.transports {
+    color: #000;
+    font-weight: 400;
+    font-size: 32px;
+    overflow: hidden;
+    padding-bottom: 15px;
+  }
+  h1.title:after {
+    background: #ddd;
+    content: "";
+    display: inline-block;
+    height: 2px;
+    position: relative;
+    left: 0.5em;
+    top: -2px;
+    margin-right: -100%;
+    vertical-align: middle;
+    width: 100%;
+  } 
+  .activity-title {
+    margin-left: -20px;
+  }
+  .activities-wrapper {
+    position: absolute;
+    bottom: 0px;
+  }
+  .new-notification {
+    position: absolute;
+    top: 2px;
+    right: -2px;
+    border-radius: 50%;
+    display: block;
+    width: 12px;
+    height: 12px;
+    background: #cb3333; 
+  }
+  .activity-box {
+    width: 100%;
+    background: #14181a;
+    border-radius: 4px;
+    padding: 0 10px 10px 10px;
+    min-height: 350px;
+    overflow-y: scroll;
+    color: #fff;
+  }
+  .activity {
+    padding: 10px 5px 0 5px;
+
+  }
+  .activity-title {
+    background: #2c75a4;
+    -moz-box-shadow: inset 0 -2px 0 rgba(35,31,32,.25);
+    -webkit-box-shadow: inset 0 -2px 0 rgba(35,31,32,.25);
+    box-shadow: inset 0 -2px 0 rgba(35,31,32,.25);
+    padding: 15px;
+    text-indent: 20px;
+    color: #fff;
+    font-size: 18px;
+  }
+  .activity li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #283034;
+  }
+  .activity li:last-child {
+    border-bottom: none;
+  }
+  .transport-packages {
+    margin-top: 25px;
+  }
+  table {
+    border: 2px solid #71b2db;
+  }
+  td {
+    border-top: 1px solid #71b2db !important;
+    padding: 10px !important;
+  }
+  tr {
+    background: #fff;
+  }
+  th {
+    border-bottom: 2px solid #71b2db !important;
+  }
+  .table-header {
+    background: #1e2427 !important; 
+    color: #fff;
+    border: 2px solid #000;
+  }
+  .critical {
+    color: #ce6767;
+    font-weight: 500;
+  }
+  .warning-text {
+    color: #cea867;
+    font-weight: 500;
+  }
+  .selection-box {
+    float: right;
+    position: relative;
+    top: 15px;
+  }
+  .selection-box li {
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+  }
+  .selection-box li:last-child {
+    margin-right: 0;
+  }
+  .active {
+    background: #2c75a4;
+    color: #fff;
+  }
+
+
+/* Package */
+  .package-id {
+    font-size: 26px;
+    padding-bottom: 15px;
+  }
+
+  .package-object {
+    background: #dceffc;
+    border-radius: 4px;
+    border: 2px solid #71b2db;
+    margin-bottom: 15px;
+    line-height: 2.0;
+    padding: 15px;
+    font-size: 14px;
+    display: inline-block;
+    position: relative;
+    color: #2c75a4;
+  }
+
+  .package-form {
+
+  }
+
+  .package-form-end {
+    display: inline-block;
+  }
+
+  .package-status {
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    left: 30%;
+    top: 30px;
+    display: block;
+    border-radius: 50%;
+    bottom: 19px;
+   }
+   .package-status-tbl {
+    height: 15px;
+    width: 15px;
+    display: block;
+    border-radius: 50%;
+   }
+  .package-details {
+    background: #586873;
+    float: right;
+    padding: 10px;
+    font-size: 12px;
+    border-radius: 2px;
+    color: #fff;
+    -moz-box-shadow: inset 0 -1px 0 rgba(35,31,32,.25);
+    -webkit-box-shadow: inset 0 -1px 0 rgba(35,31,32,.25);
+    box-shadow: inset 0 -1px 0 rgba(35,31,32,.25);
+    border: none;
+  }
+
+  hr {
+    border-color: #71b2db;
+  }
+  .table-row {
+
+  }
+  .active-nav {
+    background: #2e373c;
+    color: #fff !important;
+  }
+  .error {
+    background: #ce6767 !important;
+  }
+  .warning {
+    background: #cea867 !important;
+  }
+  .success {
+    background: #2fb977 !important;
+  }
+  .filters {
+    margin: 0 auto;
+  }
+  .nav {
+    cursor: pointer;
+  }
+
+  [data-tooltip] {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* Hide the tooltip content by default */
+[data-tooltip]:before,
+[data-tooltip]:after {
+  visibility: hidden;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 999999999;
+}
+
+/* Position tooltip above the element */
+[data-tooltip]:before {
+  position: absolute;
+  bottom: 120%;
+  margin-left: -20px;
+  margin-bottom: 5px;
+  padding: 10px;
+  min-width: 200px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ce6767;
+  font-weight: 500;
+  color: #fff;
+  content: attr(data-tooltip);
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Triangle hack to make tooltip look like a speech bubble */
+[data-tooltip]:after {
+  position: absolute;
+  bottom: 120%;
+  left: 2px;
+  width: 0;
+  border-top: 5px solid #ce6767;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  content: " ";
+  font-size: 0;
+  line-height: 0;
+}
+
+/* Show tooltip content on hover */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  visibility: visible;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+
+
+
+
