@@ -1,9 +1,13 @@
 Teamname: Cold Chain Sensors
 
 Joacim Gerdbo
+
 Andrey Prokopiev
+
 Adam Wamai Egesa
+
 Erdal Bejtula
+
 Robert Bärlin
 
 robert.barlin@gmail.com
