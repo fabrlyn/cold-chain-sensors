@@ -1,2 +1,2 @@
 # ColdChainSensors
-Coding for humanity / Cold Chain Sensors Project
+Open Hack - Coding for humanity / Cold Chain Sensors Project
