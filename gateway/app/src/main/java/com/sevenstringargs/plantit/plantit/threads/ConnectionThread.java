@@ -69,7 +69,7 @@ public class ConnectionThread  extends Thread {
                 Log.i("ssa", String.valueOf(data.length()));
             }
 
-            outStream.write(new byte[]{'c','A'});
+            outStream.write(new byte[]{'c','D'});
             outStream.write(new byte[]{'d'});
         } catch (IOException e) {
             Log.i("ssa", "Failed to requet data");
