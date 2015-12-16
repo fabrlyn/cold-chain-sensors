@@ -2,12 +2,15 @@
 #include <Wire.h>
 
 unsigned long prevTime;
-int tickInterval = 1000 * 5;
+int tickInterval = 1000 * 2;
 unsigned long currentTicks = 0;
-String reqId = "";
+String reqId = "D";
 int errorState = 0;
 bool high = false;
 bool conf = false;
+
+int error2Temp = 21;
+int error3Temp = 22;
 
 int redPin = A7;
 int yellowPin = A9;
@@ -29,6 +32,7 @@ bool nextTick(){
   unsigned long currTime = millis();
   if ((currTime - prevTime) > tickInterval){
     prevTime = currTime;
+    currentTicks++;
     return true;
   }
 
@@ -40,6 +44,7 @@ void changeStatus(int s){
     analogWrite(greenPin, 0);
     analogWrite(yellowPin, 255);
   } else if (s == 3){
+    analogWrite(greenPin, 0);
     analogWrite(yellowPin, 0);
     analogWrite(redPin,255);
   }
@@ -111,7 +116,8 @@ void setup() {
   pinMode(greenPin, OUTPUT);
 
   analogWrite(greenPin, 255);
-
+  
+  delay(2000);
   prevTime = millis();
   
 }
@@ -150,17 +156,28 @@ void sendData() {
 }
 
 void loop() {
-  if (nextTick()){
-    readValues();
-   // Serial.println("next tick");
-    //Serial.println(errorState);
-    if (errorState != 3){
-      errorState = checkRequirements();
-      changeStatus(errorState);
-      //Serial.println(errorState);
-    }
-  }
+  if (nextTick()){ 
+      Serial.print("Current ticks: ");
+      Serial.println(currentTicks);
+      Serial.print("Current temp: ");
+      Serial.println(temp);
+      Serial.print("High: ");
+      Serial.println(high);
 
+      readValues();
+      if (errorState != 3){
+        
+        errorState = checkRequirements();
+
+        if (errorState == 1){
+          currentTicks = 0;
+        }
+        
+        changeStatus(errorState);
+      }
+
+      Serial.println();
+  }
 
   checkForOperation();
 }
@@ -199,15 +216,16 @@ int combine(int state1, int state2){
 
 int complexCheck(double d1, double d2){
   if (!high){
-    int res = above(temp, 30);
+    int res = above(temp, 22);
     if (res == 3){
+      Serial.println("Set to high");
       high = true;
       return checkRequirements();
     }
     return combine(res, noMore(d1));
   }
 
-  return combine(above(temp, 30), noMore(d2));
+  return combine(above(temp, 23), noMore(d2));
 }
 
 int noMore(int numberOfTicks){
@@ -221,18 +239,20 @@ int noMore(int numberOfTicks){
 }
 
 int checkRequirements(){
+  Serial.println(reqId);
+  
   if (reqId == "A"){
-    return complexCheck(10, 7);
+    return complexCheck(5, 3);
   } else if (reqId == "B"){
-    return complexCheck(8, 6);
+    return complexCheck(5, 3);
   } else if (reqId == "C"){
-    return complexCheck(14,11);
+    return complexCheck(5, 3);
   } else if (reqId == "D"){
-    return above(temp, 34);
+    return above(temp, 24);
   } else if (reqId == "E"){
     return isFreeze(temp);
   } else if (reqId == "F"){
-    return above(temp, 8);
+    return above(temp, 25);
   } else if (reqId == "0"){
     return above(temp, 8);
   } else if (reqId == "25"){
@@ -242,9 +262,9 @@ int checkRequirements(){
   } else if (reqId == "AF"){  
     return combine(complexCheck(3,2), isFreeze(temp));
   } else if (reqId == "BF"){
-    return combine(complexCheck(8,6), isFreeze(temp));
+    return combine(complexCheck(5, 3), isFreeze(temp));
   } else if (reqId == "CF"){
-    return combine(complexCheck(14, 11), isFreeze(temp));
+    return combine(complexCheck(5, 3), isFreeze(temp));
   } else {
     return 0;
   }
